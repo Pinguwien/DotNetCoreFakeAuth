@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeAuth", "FakeAuth\FakeAuth.csproj", "{55943E17-72FC-44A8-9F81-B8036D370F4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeAuth.IntTest", "FakeAuth.IntTest\FakeAuth.IntTest.csproj", "{C6F1E247-2A80-47C7-8AEB-4B671B122901}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55943E17-72FC-44A8-9F81-B8036D370F4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55943E17-72FC-44A8-9F81-B8036D370F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55943E17-72FC-44A8-9F81-B8036D370F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55943E17-72FC-44A8-9F81-B8036D370F4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6F1E247-2A80-47C7-8AEB-4B671B122901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6F1E247-2A80-47C7-8AEB-4B671B122901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6F1E247-2A80-47C7-8AEB-4B671B122901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6F1E247-2A80-47C7-8AEB-4B671B122901}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
