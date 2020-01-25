@@ -13,11 +13,6 @@ namespace FakeAuth.Api.Controllers
     [Route("[controller]")]
     public class ProtectedController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<ProtectedController> _logger;
 
         public ProtectedController(ILogger<ProtectedController> logger)
