@@ -1,7 +1,11 @@
-.vs
-.vscode
-.user
+#System Files
 .DS_Store
+
+#Visual Studio
+.vs
+.user
+
+#NuGet
 nupkg/
 
 # Visual Studio Code

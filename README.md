@@ -17,9 +17,9 @@ This, however, has some serious drawbacks imho:
 
 So, this library provides a way to simply Fake the Auth Middleware inside of .Net Core (from 2.0 upwards, at the state of writing it's 3.1). 
 
-#Features
+# Features
 * Fake Auth for Integration Tests using TestServer (but should be agnostic to the mock-server you use)
-* Possibility to set potentially needed Claims for methodcalls
+* Possibility to set potentially needed Claims for methodcalls (TODO: Try to make it parametrizable on a per-test-base)
 * (Nearly) no code change needed in the actual Project
 * Library-agnostic (works using NUnit, XUnit, MSBuild, but should work with any other library)
 
