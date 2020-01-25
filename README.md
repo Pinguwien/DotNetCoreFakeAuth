@@ -23,8 +23,8 @@ So, this library provides a way to simply Fake the Auth Middleware inside of .Ne
 * (Nearly) no code change needed in the actual Project
 * Library-agnostic (works using NUnit, XUnit, MSBuild, but should work with any other library)
 
-#Status
-Initial Commit, more to come 
+# Status
+Initial Commit, first working implementation
 
-#Licensing
+# Licensing
 Do what you want with it (MIT). When we meet, I drink beer and good whisky :beers: :grimacing:
