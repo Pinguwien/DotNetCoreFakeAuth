@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FakeAuth.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -22,13 +25,14 @@ namespace FakeAuth
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            
+            //Call the config for authentication/authorization
+            ConfigureAuth(services);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -40,9 +44,27 @@ namespace FakeAuth
 
             app.UseRouting();
 
+            //set your app to use authentication and authorization middlewares
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+        }
+        
+        //method is virtual so we can override it in TestStartup.cs
+        protected virtual void ConfigureAuth(IServiceCollection services)
+        {
+            //configure authentication via JwtConfig.cs using your oidc servers details as params from e.g. env variables, vaults etc.
+            services.ConfigureJwtAuthentication(options =>
+            {
+                options.Audience = "dummyAudience";
+                options.TokenValidationParameters.ValidAudience = options.Audience;
+                options.Authority = "dummyAuthority";
+                options.TokenValidationParameters.ValidIssuer = "dummyIssuer";
+            });
+            
+            //configure and add the Authorization part via JwtConfig.cs
+            services.ConfigureJwtAuthorization();
         }
     }
 }
